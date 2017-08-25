@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+</head>
+<body>
+	<div class="templatemo-top-nav-container">
+                    <div class="row">
+                        <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                            <ul class="text-uppercase">
+                                <li><a style="border-left:none;">欢迎您，尊敬的{$data['admin_name']}</a></li>
+                                <li><a href="__URL__/add_article" >发表新作</a></li>
+                                <li><a href="<?php echo U('Admin/savepwd')?>">资料修改</a></li>
+                                <li><a href="__ROOT__/Home/Index/index" target="_blank">博客首页</a></li>
+                                <li><a href="{:U('Login/loginout')}">退出登录</a></li>
+                            </ul>   
+                        </nav> 
+                    </div>
+                </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[ 2017-08-24T14:36:06+08:00 ] 127.0.0.1 /blog/tp/index.php/Qian/Cate/show.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+NOTIC: [2048] Declaration of Home\Controller\CateController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\xampp\htdocs\blog\tp\Admin\Qian\Controller\CateController.class.php 第 9 行.
+ERR: 无法加载控制器:Cate
+

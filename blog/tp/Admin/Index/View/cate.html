@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"/>
+        <webinfo>
+            <title><{$ii.web_name}> - <{$ii.web_title}> | <{$cate.seo_title|default="$ii[web_title_desc]"}></title>
+            <meta name="keywords" content="<{$ii.web_keywords}>"/>
+            <meta name="description" content="<{$cate.seo_desc|default="$ii[web_desc]"}>"/>
+        </webinfo>
+        <link href="__PUBLIC__/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon"/>
+        <link rel='stylesheet' id='jaguar-css'  href="__CSS__/app.css?ver=1.0.6" type='text/css' media='all' />
+        <link  href="__VEN__/layui/css/layui.css"  media="all" rel="stylesheet">
+        <script src="__VEN__/jquery-3.1.1.min.js"></script>
+        <script src="__VEN__/layer/layer.js" type="text/javascript" ></script>
+        <script src="__VEN__/layui/layui.js"></script>
+    </head>
+    <body class="single single-post postid-384 single-format-standard">
+        <div id="page" class="hfeed site">
+        <header id="header" class="home-header blog-background banner-mask">
+                
+            <div class="nav-header container">       
+                <div class="nav-header-container">
+                    <nav  where="fid = 0" >
+                        <if condition="$n.type eq 2"><a class="back-home" href="__URL__/<{$n.link}>.html"><{$n.name}></a>
+                            <elseif condition="$n.type eq 0" /><a class="back-home <php > if($_GET['id']==$n['id']||$_GET['fid']==$n['id']){echo ' hover';}</php>" href="__URL__/cate/id/<{$n.id}>.html"><{$n.name}></a>
+                            <else /><a class="back-home " href="__URL__/page/id/<{$n.id}>.html"><{$n.name}></a>
+                        </if>
+                    </nav>    
+                </div>            
+            </div>
+
+            <div class="header-wrap">
+                <div class="container">
+                        
+                    <div class="nav-header container">     
+                        <div class="nav-header-container">
+                            <n  where="fid = $cate[id]">
+                                <if condition="$nc.type eq 2"><a class="back-home" href="__URL__/<{$nc.link}>.html"><{$nc.name}></a>
+                                    <elseif condition="$nc.type eq 0" /><a class="back-home <if condition="$Think.get.id eq $nc.id " > hover</if>" href="__URL__/cate/id/<{$nc.id}>/fid/<{$nc.fid}>.html"><{$nc.name}></a>
+                                    <else /><a class="back-home " href="__URL__/page/id/<{$nc.id}>.html"><{$nc.name}></a>
+                                </if>
+                            </n> 
+                        </div>
+                    </div>
+                    
+                    <div class="post-info-container" >
+                        <h2 class="post-page-title "><{$cate.name}></h2>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <div id="main" class="content homepage">    
+            <div class="content-area container">
+                <div class="site-content">
+                    <volist name='list' id='v' empty='暂无数据'>
+                        <article class="post-item">
+                            <div class="mask-wrapper">
+                                <h2 class="post-title">
+                                    <a href="__URL__/article/aid/<{$v.id}>.html" title="<{$v.title}>"><{$v.title|mb_substr=0,20,'utf-8'}></a>
+                                </h2>
+                                <div class="post-info"><span class="post-time"><time><{$v.addtime|date="m月d ,Y",###}></time></span>
+                                    <span class="middotDivider"></span>
+                                    <span class="post-tags"><a href="__URL__/cate/id/<{$v.mid}>.html" rel="category"><{$v.menu}></a></span>
+                                    <span class="middotDivider"></span>
+                                    <span class="post-tags">Author - <{$v.author}></span>
+                                </div>
+                            </div>
+                            
+                            <div class="post-image">
+                                <div class="info-mask">
+                                    <{$v.content}>
+                                </div>
+                            </div>
+                        </article> 
+                    </volist>
+                    <div class="nav-links">
+                        <{$page}>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <footer>
+            <div class="footavatar site-footer clearfix u-textAlignCenter">
+                <img src="__PUBLIC__/Upload/avatar/logo.jpg" class="footphoto">     
+                <ul class="footinfo">
+                    <p class="fname"><a><{$ii.web_name}></a></p>
+                    <p class="finfo"><{$ii.web_title_desc}></p>
+                <ul>
+            </div>
+            <div class="Copyright">
+              Powered by <a href="http://www.m-finder.com" target="_blank"><{$ii.web_name}></a>
+            </div>
+        </footer>
+        
+    </div>
+        
+    <div class="back2top">
+        <svg class="icon" viewBox="0 0 1229 1024" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.203125" height="16">
+        <defs><style type="text/css"></style></defs>
+        <path d="M955.765399 614.591058v408.726594h-682.348237V614.591058h-273.416939l614.591057-614.591058 614.591058 614.591058H955.765399z" fill="" ></path>
+        </svg>
+    </div>
+    <script type='text/javascript' src='__JS__/application.js?ver=1.0.6'></script>
+</body>
+</html>

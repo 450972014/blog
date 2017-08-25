@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>君莫笑 - 君莫沐雨笑便橙风</title>
+    <link rel="shortcut icon" href="__PUBLIC__/images/Logo_40.png" type="image/x-icon">
+    <!--Layui-->
+    <link href="__PUBLIC__/css/layui.css" rel="stylesheet" />
+    <!--font-awesome-->
+    <link href="__PUBLIC__/css/font-awesome.min.css" rel="stylesheet" />
+    <!--全局样式表-->
+    <link href="__PUBLIC__/css/global.css" rel="stylesheet" />
+    <!-- 本页样式表 -->
+    <link href="__PUBLIC__/css/home.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="blog-nav layui-header">
+        <div class="blog-container">
+            <!-- QQ互联登陆 -->
+            <a href="javascript:;" class="blog-user">
+                <i class="fa fa-qq"></i>
+            </a>
+            <a href="javascript:;" class="blog-user layui-hide">
+                <img src="__PUBLIC__/images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
+            </a>
+            <!-- 不落阁 -->
+            <a class="blog-logo" href="__PUBLIC__/home.html">君莫笑</a>
+            <!-- 导航菜单 -->
+            <ul class="layui-nav" lay-filter="nav">
+                <li class="layui-nav-item ">
+                    <a href="{:U('index/home')}"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{:U('article/article')}"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{:U('resource/resource')}"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{:U('timeline/timeline')}"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{:U('about/about')}"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                </li>
+            </ul>
+            <!-- 手机和平板的导航开关 -->
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>  
+        <!-- Left column -->
+        <div class="templatemo-flex-row">
+            <include file="Public/menu" />
+            <!-- Main content --> 
+            <div class="templatemo-content col-1 light-gray-bg">
+                <include file="Public/top" />
+
+
+                <div class="templatemo-content-container">
+
+                    <div class="templatemo-content-widget white-bg">
+
+                        <form class="layui-form layui-form-pane" id="signupForm" action="{:U('Sort/sortadd')}" method="post" >
+                            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">添加列表</li>
+                                </ul>
+
+
+                                <div class="layui-tab-content">
+
+                                    <div class="layui-tab-item layui-show">
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">上传头像</label>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn" id="file">
+                                                  <i class="layui-icon">&#xe67c;</i>选择图片
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div> 
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <input type="submit" class="layui-btn" value="提交"></input>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <iframe style="display:none" name="hiddenIFrame" id="hiddenIFrame"></iframe>
+
+
+                    </div>
+
+                    <script src="__AJS__/templatemo-script.js" type="text/javascript" ></script><!-- Templatemo Script -->
+                    <script src="__VEN__/h5/TweenLite.min.js"></script>
+                    <script src="__VEN__/h5/EasePack.min.js"></script>
+                    <script src="__VEN__/h5/rAF.js"></script>
+                    <script src="__VEN__/h5/demo-1.js"></script>
+
+                    <footer class="layui-footer">
+                        <p>Copyright &copy; <script type="text/javascript">document.write((new Date()).getFullYear());</script> M-finder | More Templates <a href="http://www.m-finder.com/" target="_blank">M-finder</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="__PUBLIC__/Vendor/jquery-3.1.1.min.js"></script>
+        <script src="__PUBLIC__/Vendor/jquery.validate.js"></script>
+        <script src="__PUBLIC__/Vendor/messages_zh.js"></script>
+        
+        <script type="text/javascript">
+            layui.use('element', function () {
+                var element = layui.element();  //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+                //监听导航点击
+                element.on('nav(demo)', function (elem) {
+                    layer.msg(elem.text());
+                });
+            });
+            var upload = layui.upload; //得到 upload 对象
+            //创建一个上传组件
+            upload.render({
+                elem: '#file',
+                url: '/admin.php/Personal/uploadFile', //必填项
+                method: 'post',  //可选项。HTTP类型，默认post
+                data: {}, //可选项。额外的参数，如：{id: 123, abc: 'xxx'}
+                before:function(){
+                    layer.load();
+                }
+            });     
+
+             
+</script>
+    </body>
+</html>

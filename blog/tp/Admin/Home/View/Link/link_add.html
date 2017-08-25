@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>  
+        <!-- Left column -->
+        <div class="templatemo-flex-row">
+            <include file="Public/menu" />
+            <!-- Main content --> 
+            <div class="templatemo-content col-1 light-gray-bg">
+                <include file="Public/top" />
+
+
+                <div class="templatemo-content-container">
+
+                    <div class="templatemo-content-widget white-bg">
+
+                        <form class="layui-form layui-form-pane" id="signupForm" action="{:U('Link/linkadd')}" method="post" >
+                            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">添加列表</li>
+                                </ul>
+
+
+                                <div class="layui-tab-content">
+
+                                    <div class="layui-tab-item layui-show">
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">友链名称</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="link_name" id="link_name" lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="layui-tab-item layui-show">
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">友链链接</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="link_url" id="link_url" lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> 
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <input type="submit" class="layui-btn" value="提交"></input>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <iframe style="display:none" name="hiddenIFrame" id="hiddenIFrame"></iframe>
+
+
+                    </div>
+
+                    <script src="__AJS__/templatemo-script.js" type="text/javascript" ></script><!-- Templatemo Script -->
+                    <script src="__VEN__/h5/TweenLite.min.js"></script>
+                    <script src="__VEN__/h5/EasePack.min.js"></script>
+                    <script src="__VEN__/h5/rAF.js"></script>
+                    <script src="__VEN__/h5/demo-1.js"></script>
+
+                    <footer class="layui-footer">
+                        <p>Copyright &copy; <script type="text/javascript">document.write((new Date()).getFullYear());</script> M-finder | More Templates <a href="http://www.m-finder.com/" target="_blank">M-finder</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="__PUBLIC__/Vendor/jquery-3.1.1.min.js"></script>
+        <script src="__PUBLIC__/Vendor/jquery.validate.js"></script>
+        <script src="__PUBLIC__/Vendor/messages_zh.js"></script>
+        <script>
+             layui.use('element', function () {
+                var element = layui.element();  //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+                //监听导航点击
+                element.on('nav(demo)', function (elem) {
+                    layer.msg(elem.text());
+                });
+            });
+             $(function(){
+                $("#signupForm").validate({
+                  rules: {
+
+                    link_name: {
+                        required: true,
+                        minlength: 2,
+                        remote:{
+                            url:"{:U('Link/link_name')}",
+                            type:'post',
+                            data:{
+                                link_name:function(){
+                                    return $("#link_name").val();
+                                }
+                            }
+                        }
+                    },
+
+                    link_url:{
+                        required: true,
+                        minlength:5,
+                        url: true,
+                        remote:{
+                            url:"{:U('Link/link_url')}",
+                            type:'post',
+                            data:{
+                                link_url:function(){
+                                    return $("#link_url").val();
+                                }
+                            }
+                        }
+                    },
+                   
+                  },
+                  
+                
+
+                messages:{
+                    link_name:{
+                        required:'请输入友链名称',
+                        minlength:'最少输入俩位',
+                        remote:'友链已存在',
+                    },
+                    link_url:{
+                         required:'请输入友链名称',
+                         minlength:'友链格式不正确',
+                         url:'请输入有效的网址',
+                         remote:'友链已存在',
+                    },
+                },
+                showErrors:function(errorMaps,errorList){
+                    
+                    $(errorList).each(function(index,value){
+                        layer.msg(value.message);
+                        console.log(index);
+                        console.log(value);
+                        return false;
+                        console.log(value);
+                    })          
+                }
+             });
+            })
+        </script>
+    </body>
+</html>

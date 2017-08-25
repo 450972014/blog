@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+        <meta name="author" content="M-finder">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Refresh" content ="<?php echo $wait;?> ;url=<?php echo $jumpUrl;?>"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>君莫笑 - 后台管理系统</title>
+        <link href="__PUBLIC__/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon"/>
+        <link href="__PUBLIC__/Admin/css/font-awesome.min.css" rel="stylesheet">
+        <link href="__PUBLIC__/Admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__PUBLIC__/Admin/css/templatemo-style.css" rel="stylesheet">
+        <link href="__PUBLIC__/Vendor/h5/component.css" rel="stylesheet">
+        <link  href="__PUBLIC__/Vendor/layui/css/layui.css"  media="all" rel="stylesheet">
+        <script src="__PUBLIC__/Vendor/jquery-3.1.1.min.js"></script>
+        <script src="__PUBLIC__/Vendor/layer/layer.js" type="text/javascript" ></script>
+        <script src="__PUBLIC__/Vendor/layui/layui.js"></script>
+</head>
+<body>
+	<div class="templatemo-sidebar">
+                <header class="templatemo-site-header">
+                    <div class="square"></div>
+                    <h1>君莫笑</h1>
+                </header>
+                <div class="profile-photo-container demo-1">
+                    <div id="large-header" class="large-header">
+                        <canvas id="demo-canvas"></canvas>
+                    </div>
+                    <div class="profile-photo-overlay "></div>
+                </div>      
+
+                <div class="mobile-menu-icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <nav class="templatemo-left-nav">
+                    <ul class="layui-nav layui-nav-tree ">
+                        <li class="layui-nav-item"><a href="__URL__/index"><i class="layui-icon" style="top: 3px;">&#xe609; </i>系统首页</a></li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;"><i class="layui-icon" style="top: 3px;">&#xe60a; </i>内容管理</a>
+                            <dl class="layui-nav-child">
+                                <dd ><a href="{:U('Article/show')}">文章管理</a></dd>
+                                <dd ><a href="{:U('Article/huishou')}">回收站</a></dd>
+                                <dd><a href="{:U('Sort/show')}">分类管理</a></dd>
+                                <dd ><a href="{:U('Label/show')}">标签管理</a></dd>
+                            </dl>
+                        </li>
+
+                          <li class="layui-nav-item">
+                            <a href="javascript:;"><i class="layui-icon" style="top: 3px;">&#xe620; </i>关于文章</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="{:U('Label/index')}">文章标签的管理</a></dd>
+                                <dd><a href="{:U('Type/index')}">文章类型管理</a></dd>
+                                <dd><a href="{:U('Comment/index')}">文章评论管理</a></dd>
+                            </dl>
+                        </li>
+                        
+                        <li class="layui-nav-item ">
+                            <a href="javascript:;"><i class="layui-icon" style="top: 3px;">&#xe620; </i>管理员操作</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="{:U('Admin/show')}">管理员展示</a></dd>
+                                <dd><a href="{:U('Admin/showlog')}">管理员日志</a></dd>
+                                <dd><a href="{:U('User/show')}">用户列表</a></dd>
+                            </dl>
+                        </li>
+
+                        <li class="layui-nav-item">
+                            <a href="javascript:;"><i class="layui-icon" style="top: 3px;">&#xe620; </i>系统设置</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="{:U('Link/show')}">友情链接</a></dd>
+                                <dd><a href="{:U('Personal/show')}">资料修改</a></dd>
+                                <dd><a href="{:U('Config/show')}">网站设置</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+</body>
+</html>
